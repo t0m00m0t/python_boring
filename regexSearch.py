@@ -5,20 +5,18 @@ import re, os
 
 print('Input regex :')
 input_regex = input()
-
-print('Input replaced word :')
-repl_word = input()
-
+print('Input regex is : '+ input_regex)
 # 正規表現
-regex = re.compile(repl(input_regex))
+regex = re.compile(input_regex)
 
 # フォルダの中のtxt探索
 for filedir in os.listdir(os.getcwd()):
     if filedir.endswith('.txt'):
+        print('Found .txt file : {}'.format(filedir))
         text_file = open(filedir)
         for line in text_file.readlines():
             mo = regex.search(line)
-            if mo != none:
+            if mo != None:
                 print('Found regex maching !!!')
                 print(line)
         text_file.close()

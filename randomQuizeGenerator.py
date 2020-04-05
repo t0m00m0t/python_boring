@@ -22,7 +22,7 @@ capitals = {'北海道':'札幌市', '青森県':'青森市', '岩手県':'盛�
 for i in range(35):
     #問題集と解答集のファイルを作る
     quize_file = open('capitalsquize{}.txt'.format(i+1), 'w')
-    answer_file = open('capitalsquize_answer{}.txt'.format(), 'w')
+    answer_file = open('capitalsquize_answer{}.txt'.format(i+1), 'w')
 
     #問題集のヘッダーを書く
     quize_file.write('名前 : \n\n日付 : \n\n学期 : \n\n')
@@ -50,7 +50,8 @@ for i in range(35):
         quize_file.write('\n')
 
         #答えの選択肢を解答ファイルに書く
-        answer_file.write('{}. {} {}'.format(i+1, 'ABCD'[answer_options.index(correct_answer)], correct_answer))
+        answer_file.write('{}. {} {}'.format(j+1, 'ABCD'[answer_options.index(correct_answer)], correct_answer))
+        answer_file.write('\n')
 
 quize_file.close()
 answer_file.close()
